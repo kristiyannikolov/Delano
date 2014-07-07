@@ -73,7 +73,7 @@ class ReserveController extends Controller
 
     /**
      * @Route("/operate", name="operate")
-	 * @Method({"GET", "POST"})
+	 * @Method({"GET"})
 	 * @Template("DelanoMainBundle:Reserve:operate.html.twig")
      */
     public function operateAction()
