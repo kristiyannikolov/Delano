@@ -14,7 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class AdminController extends Controller
 {
     /**
-     * @Route("/")
+	 * @Route("/" name="adminindex")
 	 * @Method({"GET"})
 	 * @Template("DelanoMainBundle:Admin:index.html.twig")
      */
@@ -44,18 +44,20 @@ class AdminController extends Controller
             $this->get('session')->getFlashBag()->add(
                 'notice',
                 'Your post has<strong>' . $entity->getTitle() . '</strong>been submitted');
-        }
 
-        return $this->render('DelanoMainBundle:Admin:editnews.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
+			return $this->redirect($this->generateUrl('adminindex'));
+		}
+
+		return array(
+			'entity' => $entity,
+			'form' => $form->createView(),
             'csrf_token' => $this->container->get('form.csrf_provider')->generateCsrfToken('sedimalko')
-        ));
+		);
 
 
-    }
+	}
 
-    /**
+	/**
      * @Route("/messages")
 	 * @Method({"GET", "POST"})
 	 * @Template()
