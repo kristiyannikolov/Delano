@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}DelanoMainBundle:Admin:editnews{% endblock %}
+
+{% block body %}
+    <div style="padding-left: 10%; padding-right: 10%">
+        <div class="col-sm-6">
+            <form class="form-horizontal">
+                <legend>New Post</legend>
+                 {{ form_widget(form) }}
+
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-default">Create</button>
+                    </div>
+                </div>
+
+    </form>
+    </div>
+    </div>
+{% endblock %}

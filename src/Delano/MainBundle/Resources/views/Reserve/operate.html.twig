@@ -1,0 +1,73 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}DelanoMainBundle:Reserve:operate{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="alert alert-success">
+                        <blockquote>
+                            <p> {{ flashMessage }}</p>
+
+                        </blockquote>
+
+                    </div>
+                {% endfor %}
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><h2 class="panel-title">Unverified Reservations</h2></div>
+                    <div class="panel-body">
+                        {% for entities in entity %}
+                            {% if entities.ver != 1 %}
+                                <h3>Reservation From: {{ entities.name }} for: {{ entities.date|date('Y-m-d H:i:s') }}
+                                    <a href="operate/verify/{{ entities.id }}"<span
+                                            class="label label-warning">Verify</span></a></h3>
+                                <h4>Extra Information: {{ entities.extra }}</h4>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading"><h2 class="panel-title">Verified Reservations</h2>
+
+                        <div class="badge">{{ pagination.getTotalItemCount }}</div>
+                    </div>
+                    <div class="panel-body">
+                        {# total items count #}
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tbody>
+                                <th class="alert-success">Name</th>
+                                <th class="alert-success">For When</th>
+                                <th class="alert-success">Number People</th>
+                                {% for entities in pagination %}
+                                    {% if entities.ver == 1 %}
+                                        <tr>
+                                            <td>{{ entities.name }}</td>
+                                            <td>
+                                                <div class="clearfix">
+                                                    {{ entities.date|date('Y/M/d/D') }}</div>
+                                            </td>
+                                            <td> {{ entities.many }}</td>
+                                        <tr>
+
+                                            <td class="alert alert-success" colspan="3">
+                                                Extra: {{ entities.extra }} </td>
+                                        </tr>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <div class="pager">
+                                {{ knp_pagination_render(pagination) }}       </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
