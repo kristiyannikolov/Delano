@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b163dd51c4a564c75752efbf2aa3a11",
+    "hash": "be19f56ef2f9f5f5e307d4ee477e5d47",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1017,58 +1017,6 @@
             "time": "2014-01-12 16:20:24"
         },
         {
-            "name": "jms/metadata",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/schmittjoh/metadata.git",
-                "reference": "88ffa28bc987e4c26229fc84a2e541b6ed4e1459"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/metadata/zipball/88ffa28bc987e4c26229fc84a2e541b6ed4e1459",
-                "reference": "88ffa28bc987e4c26229fc84a2e541b6ed4e1459",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "doctrine/cache": "~1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Metadata\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache"
-            ],
-            "authors": [
-                {
-                    "name": "Johannes M. Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
-                }
-            ],
-            "description": "Class/method/property metadata management in PHP",
-            "keywords": [
-                "annotations",
-                "metadata",
-                "xml",
-                "yaml"
-            ],
-            "time": "2013-11-05 23:02:36"
-        },
-        {
             "name": "jquery/jquery",
             "version": "1.10.2",
             "dist": {
@@ -1078,88 +1026,6 @@
                 "shasum": null
             },
             "type": "library"
-        },
-        {
-            "name": "knplabs/gaufrette",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/Gaufrette.git",
-                "reference": "b243f8f3ea535b7f080d51be5cc98a3f72c0b627"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/b243f8f3ea535b7f080d51be5cc98a3f72c0b627",
-                "reference": "b243f8f3ea535b7f080d51be5cc98a3f72c0b627",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "amazonwebservices/aws-sdk-for-php": "1.5.*",
-                "aws/aws-sdk-php": "~2",
-                "doctrine/dbal": ">=2.3",
-                "dropbox-php/dropbox-php": "*",
-                "herzult/php-ssh": "*",
-                "microsoft/windowsazure": "dev-master",
-                "mikey179/vfsstream": "~1.2.0",
-                "phpseclib/phpseclib": "dev-master",
-                "phpspec/phpspec": "2.0.*",
-                "phpunit/phpunit": "3.7.*",
-                "rackspace/php-opencloud": "1.9.*"
-            },
-            "suggest": {
-                "amazonwebservices/aws-sdk-for-php": "to use the legacy Amazon S3 adapters",
-                "aws/aws-sdk-php": "to use the Amazon S3 adapter",
-                "doctrine/dbal": "to use the Doctrine DBAL adapter",
-                "dropbox-php/dropbox-php": "to use the Dropbox adapter",
-                "ext-apc": "to use the APC adapter",
-                "ext-curl": "*",
-                "ext-fileinfo": "This extension is used to automatically detect the content-type of a file in the AwsS3, OpenCloud, and AzureBlogStorage adapters",
-                "ext-mbstring": "*",
-                "ext-mongo": "*",
-                "ext-zip": "to use the Zip adapter",
-                "herzult/php-ssh": "to use SFtp adapter",
-                "knplabs/knp-gaufrette-bundle": "to use with Symfony2",
-                "microsoft/windowsazure": "to use Microsoft Azure Blob Storage adapter",
-                "phpseclib/phpseclib": "to use PhpseclibSftp adapter",
-                "rackspace/php-opencloud": "to use Opencloud adapter"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Gaufrette": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "The contributors",
-                    "homepage": "http://github.com/knplabs/Gaufrette/contributors"
-                },
-                {
-                    "name": "KnpLabs Team",
-                    "homepage": "http://knplabs.com"
-                }
-            ],
-            "description": "PHP5 library that provides a filesystem abstraction layer",
-            "homepage": "http://knplabs.com",
-            "keywords": [
-                "abstraction",
-                "file",
-                "filesystem",
-                "media"
-            ],
-            "time": "2014-06-24 08:35:18"
         },
         {
             "name": "knplabs/knp-components",
@@ -1221,66 +1087,6 @@
                 "paginator"
             ],
             "time": "2014-01-09 16:23:31"
-        },
-        {
-            "name": "knplabs/knp-gaufrette-bundle",
-            "version": "dev-master",
-            "target-dir": "Knp/Bundle/GaufretteBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/KnpGaufretteBundle.git",
-                "reference": "ce0e00c554a6ef80a56b05e2e4c5822e3905bc3d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/ce0e00c554a6ef80a56b05e2e4c5822e3905bc3d",
-                "reference": "ce0e00c554a6ef80a56b05e2e4c5822e3905bc3d",
-                "shasum": ""
-            },
-            "require": {
-                "knplabs/gaufrette": "0.2.*@dev",
-                "symfony/framework-bundle": "2.*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\GaufretteBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Antoine Hérault",
-                    "email": "antoine.herault@gmail.com",
-                    "homepage": "https://github.com/Herzult"
-                },
-                {
-                    "name": "The contributors",
-                    "homepage": "https://github.com/knplabs/KnpGaufretteBundle/contributors"
-                }
-            ],
-            "description": "Allows to easily use the Gaufrette library in a Symfony project",
-            "homepage": "http://knplabs.com",
-            "keywords": [
-                "abstraction",
-                "file",
-                "filesystem",
-                "media"
-            ],
-            "time": "2014-06-03 08:10:53"
         },
         {
             "name": "knplabs/knp-menu",
@@ -2288,72 +2094,6 @@
                 "templating"
             ],
             "time": "2014-07-05 12:19:05"
-        },
-        {
-            "name": "vich/uploader-bundle",
-            "version": "dev-master",
-            "target-dir": "Vich/UploaderBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dustin10/VichUploaderBundle.git",
-                "reference": "9c8a1335c8cafcc7cc256848e16987cd3d88a2d5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/9c8a1335c8cafcc7cc256848e16987cd3d88a2d5",
-                "reference": "9c8a1335c8cafcc7cc256848e16987cd3d88a2d5",
-                "shasum": ""
-            },
-            "require": {
-                "jms/metadata": "~1.5",
-                "php": ">=5.3.2",
-                "symfony/finder": ">=2.0",
-                "symfony/framework-bundle": "~2.0",
-                "symfony/property-access": "~2.3"
-            },
-            "require-dev": {
-                "doctrine/mongodb-odm": "@dev",
-                "doctrine/orm": "@stable",
-                "knplabs/knp-gaufrette-bundle": "*",
-                "matthiasnoback/symfony-dependency-injection-test": "0.*",
-                "mikey179/vfsstream": "~1.0",
-                "oneup/flysystem-bundle": "dev-master",
-                "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "@stable"
-            },
-            "suggest": {
-                "doctrine/doctrine-bundle": "*",
-                "doctrine/mongodb-odm-bundle": "*",
-                "doctrine/orm": "*",
-                "doctrine/phpcr-odm": "~1.0",
-                "knplabs/knp-gaufrette-bundle": "*",
-                "symfony/yaml": "@stable",
-                "willdurand/propel-eventdispatcher-bundle": ">=1.2"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Vich\\UploaderBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dustin Dobervich",
-                    "email": "ddobervich@gmail.com",
-                    "homepage": "http://www.dobervich.com"
-                }
-            ],
-            "description": "Ease file uploads attached to entities",
-            "homepage": "https://github.com/dustin10/VichUploaderBundle",
-            "keywords": [
-                "file uploads",
-                "upload"
-            ],
-            "time": "2014-07-07 20:39:05"
         }
     ],
     "packages-dev": [
@@ -2413,10 +2153,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20,
-        "vich/uploader-bundle": 20,
-        "knplabs/gaufrette": 20,
-        "knplabs/knp-gaufrette-bundle": 20
+        "friendsofsymfony/user-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

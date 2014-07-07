@@ -3,5 +3,9 @@
 {% block title %}DelanoMainBundle:Admin:events{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Admin:events page</h1>
+    {% for td in news %}
+        <h2>{{ td.title }}</h2>
+        <br/>
+        <p>{{ td.body }}</p>
+    {% endfor %}
 {% endblock %}

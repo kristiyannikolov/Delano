@@ -14,14 +14,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class AdminController extends Controller
 {
     /**
-	 * @Route("/" name="adminindex")
+	 * @Route("/", name="adminindex")
 	 * @Method({"GET"})
 	 * @Template("DelanoMainBundle:Admin:index.html.twig")
      */
     public function indexAction()
     {
+		$em = $this->getDoctrine()->getRepository('DelanoMainBundle:News');
+		$news = $em->findAll();
 
-    }
+		return array('news' => $news);
+
+	}
 
     /**
      * @Route("/news")

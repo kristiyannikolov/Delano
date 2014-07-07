@@ -89,13 +89,6 @@ fos_user:
     firewall_name: main
     user_class: Delano\MainBundle\Entity\User
 
-vich_uploader:
-        db_driver: orm
-        mappings:
-            product_image:
-                uri_prefix:         /img
-                upload_destination: %kernel.root_dir%/../web/img
-
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
     default_options:

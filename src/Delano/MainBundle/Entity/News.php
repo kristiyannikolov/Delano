@@ -1,190 +1,184 @@
 <?php
 
-namespace Delano\MainBundle\Entity;
+	namespace Delano\MainBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\File;
-/**
- * News
- * @ORM\HasLifecycleCallbacks
- * @ORM\Table()
- * @ORM\Entity
- */
-class News
-{
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+	use Doctrine\ORM\Mapping as ORM;
+	use Symfony\Component\Validator\Constraints as Assert;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="author", type="string", length=255)
-     */
-    private $author;
+	/**
+	 * News
+	 * @ORM\HasLifecycleCallbacks
+	 * @ORM\Table()
+	 * @ORM\Entity
+	 */
+	class News
+	{
+		/**
+		 * @var integer
+		 *
+		 * @ORM\Column(name="id", type="integer")
+		 * @ORM\Id
+		 * @ORM\GeneratedValue(strategy="AUTO")
+		 */
+		private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
+		/**
+		 * @var string
+		 *
+		 * @ORM\Column(name="author", type="string", length=255)
+		 */
+		private $author;
 
-    /**
-     * @Assert\File(
-     *     maxSize="4M",
-     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
-     * )
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
-     *
-     * @var File $image
-     */
-    private $image;
+		/**
+		 * @var string
+		 *
+		 * @ORM\Column(name="title", type="string", length=255)
+		 */
+		private $title;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
-     */
-    private $date;
+		/**
+		 *
+		 * @var File $image
+		 */
+		private $image;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="body", type="text")
-     */
-    private $body;
+		/**
+		 * @var \DateTime
+		 *
+		 * @ORM\Column(name="date", type="datetime")
+		 */
+		private $date;
+
+		/**
+		 * @var string
+		 *
+		 * @ORM\Column(name="body", type="text")
+		 */
+		private $body;
 
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+		/**
+		 * Get id
+		 *
+		 * @return integer
+		 */
+		public function getId()
+		{
+			return $this->id;
+		}
 
-    /**
-     * Set author
-     *
-     * @param string $author
-     * @return News
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
+		/**
+		 * Set author
+		 *
+		 * @param string $author
+		 * @return News
+		 */
+		public function setAuthor($author)
+		{
+			$this->author = $author;
 
-        return $this;
-    }
+			return $this;
+		}
 
-    /**
-     * Get author
-     *
-     * @return string 
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
+		/**
+		 * Get author
+		 *
+		 * @return string
+		 */
+		public function getAuthor()
+		{
+			return $this->author;
+		}
 
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return News
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
+		/**
+		 * Set title
+		 *
+		 * @param string $title
+		 * @return News
+		 */
+		public function setTitle($title)
+		{
+			$this->title = $title;
 
-        return $this;
-    }
+			return $this;
+		}
 
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
+		/**
+		 * Get title
+		 *
+		 * @return string
+		 */
+		public function getTitle()
+		{
+			return $this->title;
+		}
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     * @return News
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
+		/**
+		 * Set image
+		 *
+		 * @param string $image
+		 * @return News
+		 */
+		public function setImage($image)
+		{
+			$this->image = $image;
 
-        return $this;
-    }
+			return $this;
+		}
 
-    /**
-     * Get image
-     *
-     * @return string 
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
+		/**
+		 * Get image
+		 *
+		 * @return string
+		 */
+		public function getImage()
+		{
+			return $this->image;
+		}
 
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     * @return News
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
+		/**
+		 * Set date
+		 *
+		 * @param \DateTime $date
+		 * @return News
+		 */
+		public function setDate($date)
+		{
+			$this->date = $date;
 
-        return $this;
-    }
+			return $this;
+		}
 
-    /**
-     * Get date
-     *
-     * @return \DateTime 
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
+		/**
+		 * Get date
+		 *
+		 * @return \DateTime
+		 */
+		public function getDate()
+		{
+			return $this->date;
+		}
 
-    /**
-     * Set body
-     *
-     * @param string $body
-     * @return News
-     */
-    public function setBody($body)
-    {
-        $this->body = $body;
+		/**
+		 * Set body
+		 *
+		 * @param string $body
+		 * @return News
+		 */
+		public function setBody($body)
+		{
+			$this->body = $body;
 
-        return $this;
-    }
+			return $this;
+		}
 
-    /**
-     * Get body
-     *
-     * @return string 
-     */
-    public function getBody()
-    {
-        return $this->body;
-    }
-}
+		/**
+		 * Get body
+		 *
+		 * @return string
+		 */
+		public function getBody()
+		{
+			return $this->body;
+		}
+	}

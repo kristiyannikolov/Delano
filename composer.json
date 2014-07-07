@@ -4,7 +4,10 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
+        "psr-0": {
+            "": "src/",
+            "SymfonyStandard": "app/"
+        }
     },
 
     "repositories": [
@@ -35,14 +38,11 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "twbs/bootstrap": "v3.0.0",
         "braincrafted/bootstrap-bundle": "~2.0",
-        "jquery/jquery":  "1.10.*",
+        "jquery/jquery": "1.10.*",
         "knplabs/knp-paginator-bundle": "*",
         "knplabs/knp-menu": "*",
         "knplabs/knp-menu-bundle": "*",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "vich/uploader-bundle": "dev-master",
-        "knplabs/gaufrette": "0.2.*@dev",
-        "knplabs/knp-gaufrette-bundle": "dev-master",
         "facebook/php-sdk-v4": "4.0.9",
         "friendsofsymfony/facebook-bundle": "1.3.*"
     },
