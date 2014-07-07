@@ -15,10 +15,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-		// $em = getDoctrine()->getManager();
-		// $news = new News();
-		// $events = new Events();
-		// $galley = new Gallery();
         return array('DelanoMainBundle:Default:index.html.twig');
     }
 
