@@ -5,7 +5,7 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
-    secret:          "%secret%"
+    secret:          45yrt4y5hrt4dasd3b34tyb457by57b56uytfhg45er
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
@@ -101,5 +101,5 @@ knp_paginator:
         sort_direction_name: direction # sort direction query parameter name
         distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
     template:
-        pagination: KnpPaginatorBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+        pagination: BraincraftedBootstrapBundle:Pagination:bootstrap.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
