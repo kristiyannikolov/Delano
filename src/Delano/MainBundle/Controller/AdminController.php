@@ -8,12 +8,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 
 class AdminController extends Controller
 {
     /**
      * @Route("/")
-     * @Template("DelanoMainBundle:Admin:index.html.twig")
+	 * @Method({"GET"})
+	 * @Template("DelanoMainBundle:Admin:index.html.twig")
      */
     public function indexAction()
     {
@@ -22,7 +25,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/news")
-     * @Template("DelanoMainBundle:Admin:editnews.html.twig")
+	 * @Method({"GET", "POST"})
+	 * @Template("DelanoMainBundle:Admin:editnews.html.twig")
      */
     public function editnewsAction(Request $request)
     {
@@ -33,9 +37,8 @@ class AdminController extends Controller
         $entity->setAuthor('Admin');
         $form = $this->createForm(new NewsType(), $entity);
         $form->handleRequest($request);
-		if ($form->isValid())
-		{
-            $em = $this->getDoctrine()->getManager();
+		if ($form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add(
@@ -54,7 +57,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/messages")
-     * @Template()
+	 * @Method({"GET", "POST"})
+	 * @Template()
      */
     public function sendmsgAction()
     {
@@ -62,7 +66,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/reservations")
-     * @Template()
+	 * @Method({"GET", "POST"})
+	 * @Template()
      */
     public function showresAction()
     {
@@ -70,7 +75,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/events")
-     * @Template()
+	 * @Method({"GET"})
+	 * @Template()
      */
     public function eventsAction()
     {
@@ -78,7 +84,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/users")
-     * @Template()
+	 * @Method({"GET"})
+	 * @Template()
      */
     public function usersAction()
     {

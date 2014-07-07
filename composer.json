@@ -40,11 +40,11 @@
         "knplabs/knp-menu": "*",
         "knplabs/knp-menu-bundle": "*",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "vich/uploader-bundle": "dev-master",
+        "vich/uploader-bundle": "*",
         "knplabs/gaufrette": "0.2.*@dev",
-        "knplabs/knp-gaufrette-bundle": "dev-master",
+        "knplabs/knp-gaufrette-bundle": "*",
         "facebook/php-sdk-v4": "4.0.9",
-        "friendsofsymfony/facebook-bundle": "dev-master"
+        "friendsofsymfony/facebook-bundle": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

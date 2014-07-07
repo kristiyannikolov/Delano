@@ -24,8 +24,8 @@ class ReserveController extends Controller
      * @Method({"GET", "POST"})
      * @Template("DelanoMainBundle:Reserve:index.html.twig")
      */
-    public function IndexAction(Request $request)
-    {
+	public function IndexAction(Request $request)
+	{
 		$ip = $request->getClientIp();
 		$getime = new DateTime('now + 24hours');
 		$ts = $getime->format('U');
@@ -63,7 +63,8 @@ class ReserveController extends Controller
 
     /**
      * @Route("/reservations/success", name="revsuccess")
-     * @Template()
+	 * @Method({"GET"})
+	 * @Template()
      */
     public function successAction()
     {
@@ -72,7 +73,8 @@ class ReserveController extends Controller
 
     /**
      * @Route("/operate", name="operate")
-     * @Template("DelanoMainBundle:Reserve:operate.html.twig")
+	 * @Method({"GET", "POST"})
+	 * @Template("DelanoMainBundle:Reserve:operate.html.twig")
      */
     public function operateAction()
     {
@@ -96,7 +98,8 @@ class ReserveController extends Controller
 
     /**
      * @Route("/operate/verify/{id}")
-     */
+	 * @Method({"GET", "POST"})
+	 */
     public function operatenAction($id)
     {
         if (false === $this->get('security.context')->isGranted('ROLE_SUPER_ADMIN')) {
