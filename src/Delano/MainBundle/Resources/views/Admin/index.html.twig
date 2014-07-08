@@ -1,11 +1,17 @@
 {% extends "::base.html.twig" %}
 
 {% block title %}DelanoMainBundle:Admin:events{% endblock %}
-
+{% block header  %}
+{% endblock %}
 {% block body %}
     {% for td in news %}
+    <div class="panel panel-primary">
+    <div class="panel-heading">
         <h2>{{ td.title }}</h2>
-        <br/>
+        </div>
+<div class="panel-body">
         <p>{{ td.body }}</p>
+        </div>
+        </div>
     {% endfor %}
 {% endblock %}
