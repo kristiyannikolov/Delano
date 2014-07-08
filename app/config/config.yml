@@ -99,3 +99,6 @@ knp_paginator:
     template:
         pagination: BraincraftedBootstrapBundle:Pagination:bootstrap.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+knp_menu:
+    twig:
+        template: BraincraftedBootstrapBundle:Menu:bootstrap.html.twig

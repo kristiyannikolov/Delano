@@ -45,9 +45,7 @@ class AdminController extends Controller
 			$em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Your post has<strong>' . $entity->getTitle() . '</strong>been submitted');
+			$this->get('braincrafted_bootstrap.flash')->success('Your post ' . $entity->getTitle() . ' is submitted');
 
 			return $this->redirect($this->generateUrl('adminindex'));
 		}

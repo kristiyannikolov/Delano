@@ -1,23 +1,48 @@
 {% extends "::base.html.twig" %}
 
 {% block title %}DelanoMainBundle:Admin:events{% endblock %}
-{% block header  %}
-{% endblock %}
 {% block body %}
 <div class="container">
+    <div class="page-header">
+        <h1>News administration/</h1>
+    </div>
+
     {% for td in news %}
     <div class="row">
-    <div class="col-lg-7">
-    <div class="panel panel-primary">
+        <div class="panel panel-danger">
     <div class="panel-heading">
-        <h2 class="panel-title">{{ td.title }}</h2> <blockquote><p class="text-right">{{ td.date }}</p></blockquote>
+<a href="#" class="alert-link">
+    <div class="alert alert-warning">
+        <p class="panel-title">
+            <span class="well-lg glyphicon glyphicon-cloud">
+                {{ td.title }}quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
+            </span>
+        </p>
+</div>
+</a>
+        <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 pull-right">
+            <a href="{{ asset('img/asdfrg.jpg') }}">
+                <img class="img-thumbnail img-responsive" src="{{ asset('img/asdfrg.jpg') }}" />
+            </a>
         </div>
-<div class="panel-body">
-        <p>{{ td.body }}</p>
+        <hr />
+        <div class="block alert alert-success"><span class="glyphicon glyphicon-calendar"></span> {{ td.date|date("D d/m/y H:i") }}</div>
+
         </div>
-        </div>
+
+            <div class="panel-body">
+    <blockquote>
+        <p>{{ td.body }}Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+
+            Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+<!-- 16:9 aspect ratio -->
+        </p>
+    </blockquote>
         </div>
         </div>
         </div>
     {% endfor %}
+</div>
 {% endblock %}
