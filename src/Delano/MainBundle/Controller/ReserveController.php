@@ -24,17 +24,17 @@ class ReserveController extends Controller
      * @Method({"GET", "POST"})
      * @Template("DelanoMainBundle:Reserve:index.html.twig")
      */
-	public function IndexAction(Request $request)
+	public function IndexAction(Request $getRequest)
 	{
-		$ip = $request->getClientIp();
+		$ip = $getRequest->getClientIp();
 		$getime = new DateTime('now + 24hours');
 		$ts = $getime->format('U');
         $reserve = new Reserve();
 		$resval = new ResVal();
         $em = $this->getDoctrine()->getManager();
         $form = $this->createForm(new ReserveType(), $reserve, array('method' => 'POST'));
-        $form->handleRequest($request);
-        if ($form->isValid()) {
+		$form->handleRequest($getRequest);
+		if ($form->isValid()) {
 			$resval->setExpireAt($ts);
 			$resval->setIpaddr($ip);
             $reserve->setVer(0);
@@ -97,17 +97,17 @@ class ReserveController extends Controller
     }
 
     /**
-     * @Route("/operate/verify/{id}")
+	 * @Route("/operate/verify/{getId}")
 	 * @Method({"GET", "POST"})
 	 */
-    public function operatenAction($id)
-    {
+	public function operatenAction($getId)
+	{
         if (false === $this->get('security.context')->isGranted('ROLE_SUPER_ADMIN')) {
             throw new AccessDeniedException('You do not have permissions to access this page.');
         }
         $em = $this->getDoctrine()->getManager();
-        $fid = $em->getRepository('DelanoMainBundle:Reserve')->find($id);
-        $fid->setVer(1);
+		$fid = $em->getRepository('DelanoMainBundle:Reserve')->find($getId);
+		$fid->setVer(1);
         $em->flush();
         $this->get('session')->getFlashBag()->add(
             'notice',

@@ -32,15 +32,15 @@ class AdminController extends Controller
 	 * @Method({"GET", "POST"})
 	 * @Template("DelanoMainBundle:Admin:editnews.html.twig")
      */
-    public function editnewsAction(Request $request)
-    {
+	public function editnewsAction(Request $getRequest)
+	{
         $time = new \DateTime();
         $time->getTimestamp();
         $entity = new News();
         $entity->setDate($time);
         $entity->setAuthor('Admin');
         $form = $this->createForm(new NewsType(), $entity);
-        $form->handleRequest($request);
+		$form->handleRequest($getRequest);
 		if ($form->isValid()) {
 			$em = $this->getDoctrine()->getManager();
             $em->persist($entity);
