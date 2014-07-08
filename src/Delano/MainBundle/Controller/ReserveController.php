@@ -24,7 +24,7 @@ class ReserveController extends Controller
      * @Method({"GET", "POST"})
      * @Template("DelanoMainBundle:Reserve:index.html.twig")
      */
-	public function IndexAction(Request $getRequest)
+	public function indexAction(Request $getRequest)
 	{
 		$ip = $getRequest->getClientIp();
 		$getime = new DateTime('now + 24hours');
